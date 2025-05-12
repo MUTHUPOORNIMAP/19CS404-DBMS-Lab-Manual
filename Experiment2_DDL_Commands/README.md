@@ -105,123 +105,214 @@ CREATE TABLE Table_Name (
 
 **Question 1**
 --
--- Paste Question 1 here
+-- Create a table named Orders with the following constraints:
+OrderID as INTEGER should be the primary key.
+OrderDate as DATE should be not NULL.
+CustomerID as INTEGER should be a foreign key referencing Customers(CustomerID).
+
 
 ```sql
--- Paste your SQL code below for Question 1
+-- create table Orders(
+OrderID integer PRIMARY KEY,
+OrderDate date NOT NULL,
+CustomerID integer,
+FOREIGN KEY(CustomerID) REFERENCES Customers(CustomerID));
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/6a1932eb-47fd-42c1-b2a4-a912e8014ae8)
 
-![Output1](output.png)
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+-- Write a SQL query to Add a new column mobilenumber as number in the Student_details table.
+
+Sample table: Student_details
+
+ cid              name             type   notnull     dflt_value  pk
+---------------  ---------------  -----  ----------  ----------  ----------
+0                RollNo           int    0                       1
+1                Name             VARCH  1                       0
+2                Gender           TEXT   1                       0
+3                Subject          VARCH  0                       0
+4                MARKS            INT (  0                       0
 
 ```sql
--- Paste your SQL code below for Question 2
+--alter table Student_details
+add column mobilenumber number;
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/da895e0d-d40f-4d7b-80fc-ac0a436ad2a6)
 
-![Output2](output.png)
 
 **Question 3**
 ---
--- Paste Question 3 here
+-- Create a table named Shipments with the following constraints: ShipmentID as
+INTEGER should be the primary key. ShipmentDate as DATE. SupplierID as INTEGER
+should be a foreign key referencing Suppliers(SupplierID). OrderID as INTEGER should
+be a foreign key referencing Orders(OrderID).
+
 
 ```sql
--- Paste your SQL code below for Question 3
+-- CREATE TABLE Shipments (
+ShipmentID INTEGER PRIMARY KEY,
+ShipmentDate DATE,
+SupplierID INTEGER,
+OrderID INTEGER,
+FOREIGN KEY (SupplierID) REFERENCES Suppliers(SupplierID),
+FOREIGN KEY (OrderID) REFERENCES Orders(OrderID)
+);
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/6134088d-a337-4b1b-8a2d-3720d2a2275c)
 
-![Output3](output.png)
 
 **Question 4**
 ---
--- Paste Question 4 here
+-- Create a table named ProjectAssignments with the following constraints:
+AssignmentID as INTEGER should be the primary key. EmployeeID as INTEGER should
+be a foreign key referencing Employees(EmployeeID). ProjectID as INTEGER should be a
+foreign key referencing Projects(ProjectID). AssignmentDate as DATE should be NOT
+NULL.
+
 
 ```sql
--- Paste your SQL code below for Question 4
+-- CREATE TABLE ProjectAssignments (
+AssignmentID INTEGER PRIMARY KEY,
+EmployeeID INTEGER,
+ProjectID INTEGER,
+AssignmentDate DATE NOT NULL,
+FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID),
+FOREIGN KEY (ProjectID) REFERENCES Projects(ProjectID)
+);
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/26f25ad6-ad77-481d-9619-c88a2b95b105)
 
-![Output4](output.png)
 
 **Question 5**
 ---
--- Paste Question 5 here
+-- Create a table named Department with the following constraints: DepartmentID as
+INTEGER should be the primary key. DepartmentName as TEXT should be unique and
+not NULL. Location as TEXT.
+
 
 ```sql
--- Paste your SQL code below for Question 5
+-- CREATE TABLE Department(
+DepartmentID INTEGER PRIMARY KEY,
+DepartmentName TEXT UNIQUE NOT NULL,
+Location TEXT
+);
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/04606c25-b8d5-41b2-bdf8-c71167fb5327)
 
-![Output5](output.png)
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+-- Create a table named Department with the following constraints:
+DepartmentID as INTEGER should be the primary key.
+DepartmentName as TEXT should be unique and not NULL.
+Location as TEXT.
 
 ```sql
--- Paste your SQL code below for Question 6
+-- create table Department(
+DepartmentID INTEGER PRIMARY KEY,
+DepartmentName TEXT UNIQUE NOT NULL,
+Location TEXT);
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/4736357e-261b-4257-9ea2-7c32fc0bfe2e)
 
-![Output6](output.png)
 
 **Question 7**
 ---
--- Paste Question 7 here
+-- - Insert all employees from Former_employees into Employee
+Table attributes are EmployeeID, Name, Department, Salary
 
 ```sql
--- Paste your SQL code below for Question 7
+--  Insert into Employee (EmployeeID,Name,Department,Salary)
+Select EmployeeID,Name,Department,Salary from Former_employees;
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/bb725b00-23f8-4010-86b2-f2d567d6961b)
+
 
 ![Output7](output.png)
 
 **Question 8**
 ---
--- Paste Question 8 here
+-- Create a table named ProjectAssignments with the following constraints:
+AssignmentID as INTEGER should be the primary key.
+EmployeeID as INTEGER should be a foreign key referencing Employees(EmployeeID).
+ProjectID as INTEGER should be a foreign key referencing Projects(ProjectID).
+AssignmentDate as DATE should be NOT NULL.
 
 ```sql
--- Paste your SQL code below for Question 8
+-- create table ProjectAssignments(
+AssignmentID INTEGER PRIMARY KEY,
+EmployeeID INTEGER,
+ProjectID INTEGER,
+AssignmentDate DATE NOT NULL,
+FOREIGN KEY(EmployeeID) REFERENCES Employees(EmployeeID),
+FOREIGN KEY(ProjectID) REFERENCES Projects(ProjectID));
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/38043a80-da61-412e-b36e-fb81c5e5ec04)
 
-![Output8](output.png)
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+-- Create a new table named item with the following specifications and constraints:
+item_id as TEXT and as primary key.
+item_desc as TEXT.
+rate as INTEGER.
+icom_id as TEXT with a length of 4.
+icom_id is a foreign key referencing com_id in the company table.
+The foreign key should set NULL on updates and deletes.
+item_desc and rate should not accept NULL.
 
 ```sql
--- Paste your SQL code below for Question 9
+-- create table item(
+item_id TEXT PRIMARY KEY,
+item_desc TEXT NOT NULL,
+rate INTEGER NOT NULL,
+icom_id TEXT(4),
+FOREIGN KEY(icom_id) REFERENCES company(com_id) 
+ON UPDATE SET NULL 
+ON DELETE SET NULL);
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/f9584bb3-f5a3-4a80-84c4-adce2fa8cf1b)
 
-![Output9](output.png)
 
 **Question 10**
 ---
--- Paste Question 10 here
+-- Write a SQL query for adding a new column named "email" with the datatype
+VARCHAR(100) to the table "customer"
+
 
 ```sql
--- Paste your SQL code below for Question 10
+--ALTER TABLE Customer
+ADD COLUMN email VARCHAR(100);
 ```
 
 **Output:**
 
-![Output10](output.png)
+![image](https://github.com/user-attachments/assets/fdeab58d-cf88-4b42-9edc-21d1ae544d15)
+
+
 
 
 ## RESULT
