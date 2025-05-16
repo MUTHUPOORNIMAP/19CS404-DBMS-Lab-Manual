@@ -47,123 +47,147 @@ SELECT column1, column2 FROM table_name WHERE condition;
 ```
 **Question 1**
 --
--- Paste Question 1 here
+-- - Write a SQL statement to Update the reorder level to 20 where the quantity in stock
+is less than 10 and product category is 'Snacks' in the products table
 
 ```sql
--- Paste your SQL code below for Question 1
+update Products
+set reorder_lvl=20
+where quantity<10 and category ='Snacks';
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/27d60413-9423-47dc-a30a-8ea4a75eada4)
 
-![Output1](output.png)
 
 **Question 2**
 ---
--- Paste Question 2 here
+-- Write a SQL statement to Increase the selling price by 15% in the products table
+where quantity in stock is less than 50 and supplier ID is 10.
 
 ```sql
--- Paste your SQL code below for Question 2
+update Products
+set sell_price=sell_price*1.15
+where quantity <50 and supplier_id =10;
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/bbebf03c-89bb-41b9-97c9-8e74c65a4a87)
 
-![Output2](output.png)
 
 **Question 3**
 ---
--- Paste Question 3 here
+-- - Write a SQL statement to change the EMAIL and COMMISSION_PCT column of the
+following EMPLOYEES table with 'not available' and 0.55 for those employees whose
+DEPARTMENT_ID is 110.
+
 
 ```sql
--- Paste your SQL code below for Question 3
+UPDATE Employees
+set EMAIL='not available',commission_pct=0.55
+where DEPARTMENT_ID =110;
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/eaa89fe3-3520-4ecc-bfdf-49fe292ed8e3)
 
-![Output3](output.png)
 
 **Question 4**
 ---
--- Paste Question 4 here
+Write a SQL statement to Update the hire_date of employees in department 50 to
+2024-01-24.
+
 
 ```sql
--- Paste your SQL code below for Question 4
+update Employees
+set hire_date='2024-01-24';
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/1e41c76a-73e5-4753-92b4-b943dd2f584f)
 
-![Output4](output.png)
 
 **Question 5**
 ---
--- Paste Question 5 here
+-- Write a SQL statement to Update the address to '58 Lakeview, Magnolia' where supplier ID is 5 in the suppliers table.
 
 ```sql
--- Paste your SQL code below for Question 5
+UPDATE suppliers
+SET address='58 Lakeview, Magnolia'
+WHERE supplier_id=5;
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/e624a857-f035-4631-9257-38f091352113)
 
-![Output5](output.png)
 
 **Question 6**
 ---
--- Paste Question 6 here
+Write a SQL query to Delete customers from 'customer' table where 'GRADE' is
+exactly 2.
 
 ```sql
--- Paste your SQL code below for Question 6
+delete from customer
+where grade =2;
 ```
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/5acf9855-cb55-433d-b3e5-a8246e3df668)
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+Write a SQL query to Delete customers with 'GRADE' 3 and whose 'CUST_NAME'
+contains the substring 'BBB', and 'PAYMENT_AMT' is greater than 2000
 
 ```sql
--- Paste your SQL code below for Question 7
+delete from customer
+where grade= 3
+and cust_name like '%BBB%'
+and payment_amt>2000;
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/2fe274d3-b76b-431b-a260-82ade2877cbd)
 
-![Output7](output.png)
 
 **Question 8**
 ---
--- Paste Question 8 here
+Write a SQL query to Delete customers from 'customer' table where 'CUST_CITY' is not 'New York' and 'OUTSTANDING_AMT' is greater than 5000.
 
 ```sql
--- Paste your SQL code below for Question 8
+DELETE from customer where CUST_CITY<>'New York' AND OUTSTANDING_AMT>5000;
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/7b999482-87bf-4352-99e9-93f72031e128)
 
-![Output8](output.png)
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+Write a SQL query to Delete customers from 'customer' table where 'GRADE' is greater than or equal to 2.
 
 ```sql
--- Paste your SQL code below for Question 9
+DELETE FROM customer WHERE GRADE>=2;
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/406a40de-9837-469b-a613-f7187887f2ef)
 
-![Output9](output.png)
 
 **Question 10**
 ---
--- Paste Question 10 here
+Write a SQL statement to Find those salesmen with all information whose name containing the 1st character is 'N' and the 4th character is 'l' and rests may be any character.
 
 ```sql
--- Paste your SQL code below for Question 10
+SELECT * FROM salesman WHERE name like 'N_I%';
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/43b6d085-1d46-414e-b16a-a96e6a892613)
 
-![Output10](output.png)
 
 ## RESULT
 Thus, the SQL queries to implement DML commands have been executed successfully.
