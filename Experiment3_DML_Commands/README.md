@@ -182,4 +182,6 @@ OUTPUT
 
 
 ## RESULT
+![image](https://github.com/user-attachments/assets/0801c7bc-4a7a-4c81-bed1-96c2c22bac04)
+
 Thus, the SQL queries to implement DML commands have been executed successfully.
